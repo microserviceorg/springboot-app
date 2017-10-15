@@ -34,4 +34,8 @@ public class TopicService {
 		topicRepository.delete(id);
 	}
 
+	public List<Topic> getTopicsByName(String name) {
+		return topicRepository.findByName(name);
+	}
+
 }
