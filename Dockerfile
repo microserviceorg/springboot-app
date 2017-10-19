@@ -13,7 +13,8 @@
 #    && rm /tmp/license.jar; \
 #  fi
 
-FROM java:8  
+FROM java:8
+RUN mkdir -p /var/www/java  
 COPY target/springboot-app-0.0.1-SNAPSHOT.jar /var/www/java  
 WORKDIR /var/www/java  
 RUN java -cp springboot-app-0.0.1-SNAPSHOT.jar com.durgadas.springboot.SpringbootAppApplication
