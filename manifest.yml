@@ -4,6 +4,6 @@ applications:
   timeout: 180
   name: springbootapp
   buildpack: https://github.com/cloudfoundry/java-buildpack
-  path: ./target/springboot-1.0-SNAPSHOT.zip
+  path: ./target/springboot-1.0-SNAPSHOT.jar
   memory: 512M
   random-route: true  
