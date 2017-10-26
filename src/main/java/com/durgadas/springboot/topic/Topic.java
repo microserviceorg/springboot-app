@@ -3,11 +3,16 @@ package com.durgadas.springboot.topic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 public class Topic {
 	@Id
+	@ApiModelProperty(value="Id of the topic",required = true)
 	private String id;
+	@ApiModelProperty(value="Name:what you wanna call it")
 	private String name;
+	@ApiModelProperty(value="Some description about the topic")
 	private String description;
 	
 	public Topic() {
