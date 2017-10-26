@@ -15,14 +15,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
+//swagger annotations are not really required. 
+//spring boot handles most of the things without them. 
+
 @RestController
 @RequestMapping("/topics")
+@Api(value="topicsAPI" )
 public class TopicController {
 	
 	@Autowired
 	TopicService topicService;
 
 	@GetMapping
+	@ApiOperation(value="Lists all topics. duh!")
 	public List<Topic> getAllTopics(@RequestParam (name="name",required=false) String name){
 		if (null != name) {
 			return topicService.getTopicsByName(name);
